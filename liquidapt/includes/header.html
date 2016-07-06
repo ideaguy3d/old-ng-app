@@ -1,0 +1,47 @@
+<!-- navigation -->
+
+
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a href="" id="nav-trigger" class="nav-trigger fa fa-bars"></a>
+            <a ui-sref="home" class="navbar-brand">jAlvarado</a>
+        </div>
+
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav nav-block">
+                <li><a href="" ui-sref="overview">Overview</a></li>
+                <li><a href="" ui-sref="team">About</a></li>
+                <li><a href="" ui-sref="features">Web.Apps</a></li>
+                <li><a href="" ui-sref="contact">Contact</a></li>
+                <li><a href="" ui-sref="sign-up" class="button button-signup-trigger"><strong>Hire Me!</strong></a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<script type="text/javascript" async>
+    // this script will simply add a class that'll add a css class
+    // that'll transition in and out a menu, and also handles propagation
+    // so that clicking anywhere in the window will anim it back off screen
+    jQuery(".nav-trigger").on("click", function(e){
+        e.preventDefault();
+        e.stopPropagation();
+        var $navBlock = jQuery('nav.nav-block');
+        if(!$navBlock.hasClass('nav-block-open')){
+            $navBlock.addClass('nav-block-open');
+        } else{
+            $navBlock.removeClass('nav-block-open');
+        }
+    });
+
+    jQuery('.nav-block').on('click', function(e){
+        e.stopPropagation();
+    });
+
+    jQuery(window).on('click', function(){
+        jQuery(".nav-block").removeClass('nav-block-open');
+    });
+</script>
+
+

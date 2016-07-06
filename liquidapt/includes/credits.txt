@@ -1,0 +1,3 @@
+These are the credits
+jQuery plugins
+3rd party CSS libs

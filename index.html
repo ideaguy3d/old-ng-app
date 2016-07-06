@@ -1,0 +1,142 @@
+<!doctype html>
+<html class="no-js">
+<head>
+    <meta charset="utf-8">
+    <title>Ninja Publishers Review</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+
+    <!-- orig ninja site css --
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="core/css/core.css"/>
+    <link rel="stylesheet" href="core/css/j_core.css"/>
+    <link rel="stylesheet" href="core/css/jmenu-system.css"/>
+    -->
+    <link rel="stylesheet" href="styles/bootstrap/less/bootstrap.css"/>
+    <link rel="stylesheet" href="styles/animatecss.css"/>
+    <link rel="stylesheet" href="styles/font-awesome/css/font-awesome.css"/>
+    <link href='http://fonts.googleapis.com/css?family=Damion|Lato:400,300,400italic,700,700italic|Merriweather:400,700' rel='stylesheet' type='text/css'>
+
+    <!--<link href="seq-parallax-basic/css/sequence-theme.parallax-basic.css" rel="stylesheet" media="all">-->
+
+    <link rel="stylesheet" href="liquidapt/styles/reset.css">
+    <link rel="stylesheet" href="liquidapt/styles/main.css">
+    <link rel="stylesheet" href="styles/jstyle.css">
+</head>
+
+
+<body ng-app="ngfireApp">
+
+<!--[if lt IE 7]>
+<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
+    your browser</a> to improve your experience.</p>
+<![endif]-->
+
+<!--  //Old Header from ng spa framework
+<header data-ng-include="'core/views/header.client.view.html'" data-ng-controller="HeaderController"
+        class="navbar navbar-fixed-top" ng-style="style4vert">
+</header>
+-->
+
+<header class="header" ng-include="'liquidapt/includes/header.html'"></header>
+<!-- this is all the off to the side sub nav/menu stuff -->
+<div class="aside-trigger">
+    <span class="fa fa-code fa-2x"></span>
+</div>
+
+<aside class="aside-sub-nav">
+    <ul>
+        <li><p>HTML5 </p></li>
+        <li><p>CSS3 </p></li>
+        <li><p>AngularJS </p></li>
+        <li><p>jQuery </p></li>
+    </ul>
+</aside>
+
+<ui-view></ui-view>
+
+
+<!-- /end of the off to the side sub nav/menu stuff -->
+
+<footer class="footer" ng-include="'liquidapt/includes/footer.html'" style="margin-top: 5%"></footer>
+
+<!-- //old ng spa framework footer
+ <footer id="publisher-details2" class="container-fluid clearfix" style="padding:10px 0">
+    <div class="bottom-area text-center">
+        <h3>Ninja Publishers Review is a fictitious site made by <a href="https://github.com/nbr1ninrsan2"
+                                                                    target="_blank">Julius Alvarado</a></h3>
+        <h6>version 0.0.1</h6>
+        <div class="row" >
+            <p style="display: block; padding-right: 1000px">Built with:</p>
+            <a style="vertical-align: bottom" class="col-md-2 col-sm-2 center-block" href="http://angularjs.org">
+                <img class="img-responsive" src="https://angularjs.org/img/AngularJS-large.png" alt="angular.js" />
+            </a>
+        </div>
+    </div>
+</footer>
+ -->
+
+
+<!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+<script>
+    !function (A, n, g, u, l, a, r) {
+        A.GoogleAnalyticsObject = l, A[l] = A[l] || function () {
+                    (A[l].q = A[l].q || []).push(arguments)
+                }, A[l].l = +new Date, a = n.createElement(g),
+                r = n.getElementsByTagName(g)[0], a.src = u, r.parentNode.insertBefore(a, r)
+    }(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-XXXXX-X');
+    ga('send', 'pageview');
+</script>
+
+<!-- build:js(.) scripts/vendor.js -->
+<!-- bower:js -->
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="bower_components/wow/wow.min.js"></script>
+
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/firebase/firebase.js"></script>
+<script src="bower_components/angularfire/dist/angularfire.js"></script>
+<script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+<script src="bower_components/angular-md5/angular-md5.js"></script>
+<script src="bower_components/angular-animate/angular-animate.min.js"></script>
+<script src="bower_components/angular-bootstrap/ui-bootstrap.js"></script>
+<script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+<script src="bower_components/angular-ui-utils/ui-utils.js"></script>
+<script src="bower_components/ngstorage/ngStorage.js"></script>
+<script src="styles/bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- endbower -->
+<!-- endbuild -->
+
+<!-- build:js({.tmp,app}) scripts/scripts.js -->
+<script src="app.js"></script>
+<script src="auth/auth.service.js"></script>
+<script src="auth/auth.controller.js"></script>
+<script src="users/profile.controller.js"></script>
+<script src="users/users.service.js"></script>
+<script src="channels/channels.controller.js"></script>
+<script src="channels/channels.service.js"></script>
+<script src="channels/messages.controller.js"></script>
+<script src="channels/messages.service.js"></script>
+<script src="core/controllers/header.client.controller.js"></script>
+<script src="core/controllers/home.client.controller.js"></script>
+<script src="core/directives/collapsible.client.directive.js"></script>
+<script src="core/directives/home-thumbnails.client.directive.js"></script>
+<script src="core/directives/votewidget.client.directive.js"></script>
+<script src="menu-system/controllers/ninja-menu.client.controller.js"></script>
+<script src="menu-system/directives/menu-system.client.directive.js"></script>
+<script src="menu-system/directives/ninja-menu.client.directive.js"></script>
+<script src="menu-system/directives/ninja-menu-group.client.directive.js"></script>
+<script src="menu-system/directives/ninja-menu-item.client.directive.js"></script>
+
+
+<script src="javascript/libs/imagesloaded.pkgd.min.js"></script>
+<script src="core/jquery/jparallax.js"></script>
+
+<script src="seq-parallax-basic/scripts/hammer.min.js"></script>
+<script src="seq-parallax-basic/scripts/sequence.js"></script>
+<script src="javascript/main.js"></script>
+<!-- endbuild -->
+</body>
+</html>

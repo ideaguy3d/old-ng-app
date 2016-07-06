@@ -1,0 +1,158 @@
+body {
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  font-size: large;
+}
+main {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  display: block;
+}
+.ul-base {
+  padding: 0;
+  list-style-type: none;
+}
+.header {
+  background-color: #555555;
+  color: #ffffff;
+}
+.header a {
+  color: inherit;
+}
+.jclearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.logo {
+  /* logo is being placed on an anchor,
+	 by default <a> are given a display of inline
+	 which means they respect a top padding */
+  padding: 10px 0 0 0;
+  display: block;
+}
+.jnav li a {
+  padding: 10px;
+}
+@media only screen and (min-width: 700px) {
+  .logo-block {
+    float: left;
+    /* float left only when the screen has a min-width of 700px */
+  }
+  .nav-block {
+    float: right;
+  }
+  .jnav li,
+  .jnav li a {
+    display: inline-block;
+    vertical-align: top;
+  }
+}
+.footer {
+  padding: 10px 0;
+  background-color: #555;
+  color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+}
+.footer-copyright-block {
+  font-size: 80%;
+  margin: 10px 0 0 0;
+}
+@media only screen and (min-width: 700px) {
+  .footer {
+    text-align: left;
+  }
+  .footer-social-block {
+    float: left;
+  }
+  .footer-copyright-block {
+    float: right;
+  }
+}
+.heading-primary {
+  text-align: center;
+  padding: 40px 0;
+  font-size: 220%;
+}
+.team-block {
+  text-align: center;
+}
+.team-each {
+  margin-bottom: 20px;
+}
+.team-each-member {
+  text-transform: uppercase;
+}
+.team-each-role {
+  font-size: 70%;
+}
+@media only screen and (min-width: 600px) {
+  .team-each {
+    width: 50%;
+    display: inline-block;
+    vertical-align: top;
+  }
+}
+@media only screen and (min-width: 900px) {
+  .team-each {
+    width: 33.33%;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .team-each {
+    width: 25%;
+  }
+}
+.job-positions-block {
+  margin: 25px 0 0 0;
+}
+.job-positions-each {
+  border-top: 1px solid;
+  padding: 10px 0 0 0;
+}
+.background-block {
+  background: url("../images/team2.jpg") no-repeat center;
+  background-size: cover;
+  color: #ffffff;
+  position: relative;
+  padding: 40px 0 40px 0;
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+.job-info {
+  position: relative;
+  z-index: 1;
+}
+/*.sub-heading {*/
+  /*font-style: italic;*/
+  /*text-align: center;*/
+/*}*/
+/*.heading-secondary {*/
+  /*text-transform: uppercase;*/
+  /*padding: 20px 0;*/
+  /*font-size: 160%;*/
+  /*text-align: center;*/
+/*}*/
+/*.heading-block [class|="heading"] {*/
+  /*padding-bottom: 0;*/
+/*}*/
+/*.input-text {*/
+  /*display: block;*/
+  /*padding: 10px;*/
+  /*width: 100%;*/
+  /*opacity: 0.8;*/
+  /*border: 2px solid deepskyblue;*/
+/*}*/
+/*.input-text:focus {*/
+  /*outline: 0;*/
+  /*border: 4px solid greenyellow;*/
+/*}*/

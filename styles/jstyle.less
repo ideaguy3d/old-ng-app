@@ -1,0 +1,381 @@
+// variables
+@jcoolblack: #3a3a3a;
+@golive-bgc: #252525;
+
+//quick resets
+body {
+	font-family: 'Segoe UI', Tahoma, sans-serif;
+}
+
+nav.navbar {
+	margin-bottom: 0;
+}
+
+// custom mixins
+.jmin-height {
+	//just so footer will always get pushed to bottom
+	height: 800px;
+}
+
+.jcontainer-ctr {
+	margin-left: auto;
+	margin-right: auto;
+	padding: 12px 15px;
+}
+
+.jcontains {
+	.jmin-height;
+	background-color: @golive-bgc;
+}
+
+.jcontainer-md {
+	width: 50%;
+}
+
+.grid-parent:after {
+	content: '';
+	display: table;
+	clear: both;
+}
+
+//.clearfix:after {
+//	content: "";
+//	display: table;
+//	clear: both;
+//}
+
+.aside-sub-nav {
+	background-color: @jcoolblack;
+	width: 20%;
+	position: fixed;
+	z-index: 1000;
+	right: -25%;
+	transition: all 0.2s ease-in;
+	visibility: hidden;
+	& ul {
+		list-style-type: none;
+		padding: 0;
+		position: fixed;
+	}
+	& li {
+		color: whitesmoke;
+		width: 100%;
+		display: block;
+		padding: 12px 0;
+		cursor: pointer;
+		font-size: 120%;
+		position: fixed;
+		p {
+			margin-left: 32%;
+			display: inline-block;
+		}
+		&:hover {
+			background-color: rgba(0,0,0,0.4);
+		}
+	}
+}
+
+.aside-trigger {
+	position: fixed;
+	z-index: 2;
+	right: 2px;
+	top: 40%;
+	cursor: pointer;
+	padding: 8px;
+	border: 4px solid whitesmoke;
+	&:hover {
+		background-color: lighten(@jcoolblack, 12%);
+	}
+	span {
+		color: whitesmoke;
+	}
+}
+
+.aside-sub-nav-open {
+	visibility: visible;
+	right: 0;
+	transition: all 0.2s ease-in;
+}
+
+footer {
+	margin-top: 12%;
+	width: 100%;
+	background-color: @jcoolblack;
+	color: whitesmoke;
+	& div.grid-parent {
+		vertical-align: top;
+	}
+
+	& .footer-social-block {
+		@media screen and (min-width: 600px) {
+			float: left;
+		}
+	}
+
+	& .footer-copyright-block {
+		@media screen and (min-width: 600px) {
+			float: right;
+		}
+	}
+}
+
+.logo-block {
+	@media screen and (min-width: 700px) {
+		float: left;
+	}
+	.logo {
+		display: block;
+
+		&:hover {
+			background-color: grey;
+		}
+	}
+}
+
+.nav-block {
+	@media screen and (min-width: 700px) {
+		float: right;
+		& li {
+			display: inline-block;
+			&:hover {
+				background-color: #fff;
+			}
+		}
+	}
+}
+
+// ============== from this point on Sequence.JS code ==============
+.seq-reset {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.w-h(@x:100%; @y:100%) {
+	width:@x;
+	height:@y;
+}
+
+.h-reset() {
+	margin: 0;
+	display: block;
+	line-height: 120%;
+	color: #fff;
+	//anims
+	opacity: 0;
+	-webkit-transition-duration: 0.4s;
+	transition-duration: 0.4s;
+}
+
+.content-reset {
+	display: inline-block;
+	vertical-align: middle;
+	margin: 0 4%;
+}
+
+#sequence {
+	position: relative;
+	.w-h();
+	max-width: 100%;
+	overflow: hidden;
+	margin: 0 auto;
+	padding: 0;
+	& .seq-canvas {
+		.seq-reset;
+		position: absolute;
+		.w-h();
+		//white-space: nowrap;
+		& > li:before {
+			//this should vertically center align the
+			//.content element
+			content: '';
+			display: inline-block;
+			vertical-align: middle;
+			height: 100%;
+		}
+	}
+	& .seq-canvas > * {
+		.seq-reset;
+		display: inline-block;
+		vertical-align: top;
+		.w-h();
+		//white-space: normal;
+		text-align: center;
+	}
+	& .content {
+		//also used to vertically center align the
+		//the .content element
+		.content-reset;
+	}
+	& .step1 {
+		background-color: #279fe5;
+	}
+	& .step2 {
+		background-color: #f96852;
+	}
+	& .step3 {
+		background-color: #2bbf8e;
+	}
+	& h1 {
+		.h-reset;
+		margin-bottom: .5em;
+		font-family: "Lato", "Roboto", sans-serif;
+		-webkit-transform: translate(0, -20px);
+		transform: translate(0, -20px);
+	}
+	& h4 {
+		.h-reset;
+		font-size: 1.4em;
+		-webkit-transform: translate(0, 20px);
+		transform: translate(0, 20px);
+	}
+	& .seq-in h1, & .seq-in h4 {
+		opacity: 1;
+		-webkit-transform: translate(0, 0);
+		transform: translate(0, 0);
+	}
+	& .seq-out h1 {
+		opacity: 1;
+		-webkit-transform: translate(-20px, 0);
+		transform: translate(-20px, 0);
+		-webkit-transition-duration: 0.5s;
+		transition-duration: 0.5s;
+	}
+	& .seq-out h4 {
+		opacity: 1;
+		-webkit-transform: translate(20px, 0);
+		transform: translate(20px, 0);
+		-webkit-transition-duration: 0.5s;
+		transition-duration: 0.5s;
+	}
+	& button.seq-next {
+		position: absolute;
+		bottom: 2%;
+		left: 65%;
+		width: 102px;
+		border-radius: 0;
+	}
+	& button.seq-prev {
+		position: absolute;
+		bottom: 2%;
+		left: 30%;
+		width: 102px;
+		border-radius: 0;
+	}
+}
+
+//canvas & slides reset, this should make the
+//slides on top of each other, rather than animate
+//the canvas
+.c-s-r {
+	position: absolute;
+	.w-h();
+}
+
+#sequence2 {
+	margin: 0 auto;
+	.w-h();
+	position: relative;
+	padding: 0;
+	overflow: hidden;
+	& .seq-canvas {
+		.c-s-r;
+		& > article:before {
+			content: '';
+			display: inline-block;
+			vertical-align: middle;
+			height: 100%;
+		}
+	}
+	& .seq-canvas > * {
+		.c-s-r;
+	}
+	& .content {
+		display: inline-block;
+		vertical-align: middle;
+		margin: 0 10%;
+	}
+	& h1 {
+		.h-reset;
+		-webkit-transform: translate(-20px, 0);
+		transform: translate(-200px, 0);
+	}
+	& h4 {
+		.h-reset;
+		-webkit-transform: translate(20px, 0);
+		transform: translate(190px, 0);
+	}
+	& .seq-in h1, & .seq-in h4{
+		opacity: 1;
+		-webkit-transform: translate(0,0);
+		transform: translate(0,0);
+	}
+	& ul.seq-pagination {
+		position: absolute;
+		top: 15%;
+		right: 20%;
+		list-style-type: none;
+		& li {
+			color: whitesmoke;
+			cursor: pointer;
+			.w-h(@x:100px; @y:100px);
+			transition: all 0.2s linear;
+			&:hover {
+				-webkit-transform: scale(1.1, 1.1);
+				transform: scale(1.1, 1.1);
+				transition: all 0.2s linear;
+				color: lighten(@jcoolblack, 10%);
+			}
+			&:after {
+				content: '';
+				display: table;
+				clear: both;
+			}
+			& i {
+				.w-h();
+				margin: 2px 0;
+				text-align: center;
+			}
+		}
+	}
+}
+
+
+/* Helpers: Forms */
+
+.field-block {
+	padding: 10px 0;
+}
+
+.label {
+	text-align: center;
+	padding: 0 0 10px 0;
+	display: block;
+	position: relative;
+	background-color: @jcoolblack;
+}
+
+.label-required:after {
+	content: "*";
+	color: red;
+	margin: 0 0 0 5px;
+}
+
+.input-text {
+	display: block;
+	width: 100%;
+	padding: 10px;
+	background-color: rgba(255, 255, 255, 0.9);
+	border: 1px solid #bbb;
+	transition: all 0.2s ease;
+}
+
+.input-text:focus {
+	border: 1px solid #9D67AD;
+	outline: 0;
+	transition: all 0.2s ease-in;
+}
+
+.input-text.input-error {
+	border: 1px solid red;
+}

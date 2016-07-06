@@ -1,0 +1,13 @@
+	~ hwa@11:28am on 11-21-15 ~
+
+going to use this template to work through the
+ "Responsive In-Browser Web Page Design w/HTML and CSS"
+   course from plural sight
+
+
+	~ hwa@9:06am on 11-29-15 ~
+finally finished the 3.4hours course yesterday. 
+ , but remember this project has ALL of the "Ninja Publishers Review" code
+  including the chat system and authentication. But I did change a few things
+ so I'm going to have to go through the very tedious work of figuring how 
+how to fix the little changes I made here and there. hwa@9:08am on 11-29-15

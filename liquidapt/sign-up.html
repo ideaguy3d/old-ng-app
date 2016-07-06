@@ -1,0 +1,42 @@
+
+<!-- Light box: Sign up content, was going to use the magnificPopup
+ jQuery plugin for this markup to display in a modal, which looks
+ exactly the same as the bootstrap modal which i'll likely just use
+   instead once I start using bootstrap again,
+
+   ... magnificPopup didn't play well with AngularUI front end routing-->
+<div id="popup-sign-up" class="container"><!-- classes I took out: mfp-hide popup-inline -->
+    <div class="heading-block">
+        <div class="heading-secondary">Hire Julius Alvarado</div>
+        <div class="sub-heading">before someone else does!</div>
+    </div>
+    <form class="form-sign-up js-form-validate">
+        <div class="grid-parent">
+            <div class="field-block sign-up-each grid-child">
+                <label for="s-username" class="label label-required">Company/Organization</label>
+                <input type="text" class="input-text input-required" id="s-username">
+            </div>
+
+            <div class="field-block sign-up-each grid-child">
+                <label for="s-email" class="label label-required">Email</label>
+                <input type="email" class="input-text input-required" id="s-email">
+            </div>
+        </div> <!-- /grid-parent -->
+
+        <div class="grid-parent">
+            <div class="field-block sign-up-each grid-child">
+                <label for="s-password" class="label label-required">Salary Offer</label>
+                <input type="password" class="input-text input-required" id="s-password">
+            </div>
+
+            <div class="field-block sign-up-each grid-child">
+                <label for="s-password-confirm" class="label label-required">Job Description</label>
+                <input type="password" class="input-text input-required" id="s-password-confirm">
+            </div>
+        </div> <!-- /grid-parent -->
+
+        <div class="field-block">
+            <input type="submit" class="button full-width" value="Hire jAlvarado">
+        </div>
+    </form>
+</div> <!-- /popup-inline -->
